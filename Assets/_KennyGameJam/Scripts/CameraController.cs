@@ -3,9 +3,9 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     // Sensitivity settings
-    public float panSpeed = 20f;
-    public float moveSpeed = 10f;
-    public float zoomSpeed = 10f;
+    [SerializeField] private float panSpeed = 20f;
+    [SerializeField] private float moveSpeed = 10f;
+    [SerializeField] private float zoomSpeed = 10f;
 
     // Update is called once per frame
     void Update()
