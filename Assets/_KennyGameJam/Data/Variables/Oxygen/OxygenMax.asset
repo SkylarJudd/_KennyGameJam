@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a9978ce9c8bdc724896114c9952c52ea, type: 3}
-  m_Name: OxygenTotal
+  m_Name: OxygenMax
   m_EditorClassIdentifier: 
   TagIndex: 0
   Description: 
-  _guid: d1b0ce0484c833947b0120eade6b2504
+  _guid: 497c295a8ee4c3a44a42b2ba096d4990
   _saveGuid: 0
-  _value: 500
+  _value: 50000
   _debugLogEnabled: 0
   _saved: 0
   _defaultValue: 0

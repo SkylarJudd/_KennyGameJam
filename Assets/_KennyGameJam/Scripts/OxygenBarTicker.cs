@@ -55,6 +55,12 @@ namespace KenneyJam.UI
         private void DecreaseOxygen()
         {
             oxygenTotal.Value -= 1.0f * oxygenDecreaseRate;
+
+            if (oxygenTotal.Value <= 0.0f)
+            {
+                GameMannager.instance.gameState = GameState.GameOver;
+                _isRunning = false;
+            }
         }
 
         // Method to update the OxygenTotal value
