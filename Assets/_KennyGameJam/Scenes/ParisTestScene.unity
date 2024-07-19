@@ -353,7 +353,7 @@ MonoBehaviour:
     LocalValue: 0
     Variable: {fileID: 11400000, guid: 9ea92e8123dd5534da99e8109e0e958f, type: 2}
   fuelCost:
-    UseLocal: 0
+    UseLocal: 1
     LocalValue: 0
     Variable: {fileID: 11400000, guid: f916d3127b050c340bb3f769a03304fd, type: 2}
   DroneCost:
@@ -361,11 +361,11 @@ MonoBehaviour:
     LocalValue: 0
     Variable: {fileID: 11400000, guid: 74fde320e4230994895842f418a61ff4, type: 2}
   titaniumProduction:
-    UseLocal: 0
+    UseLocal: 1
     LocalValue: 4
     Variable: {fileID: 11400000, guid: ad5307117416e3849afd5ed9e221f20e, type: 2}
   fuelProduction:
-    UseLocal: 1
+    UseLocal: 0
     LocalValue: 0
     Variable: {fileID: 0}
   DroneProduction:
@@ -632,11 +632,11 @@ MonoBehaviour:
     LocalValue: 0
     Variable: {fileID: 11400000, guid: c161d541cf8fd3d419757478738ab261, type: 2}
   fuelCost:
-    UseLocal: 0
+    UseLocal: 1
     LocalValue: 2
     Variable: {fileID: 11400000, guid: 738af067782c44e48bd4e3149a88b047, type: 2}
   DroneCost:
-    UseLocal: 1
+    UseLocal: 0
     LocalValue: 0
     Variable: {fileID: 11400000, guid: 20c4a3ded3c9f7f469d42dd5279dbb8f, type: 2}
   titaniumProduction:
@@ -644,11 +644,11 @@ MonoBehaviour:
     LocalValue: 0
     Variable: {fileID: 0}
   fuelProduction:
-    UseLocal: 1
+    UseLocal: 0
     LocalValue: 0
     Variable: {fileID: 0}
   DroneProduction:
-    UseLocal: 0
+    UseLocal: 1
     LocalValue: 2
     Variable: {fileID: 11400000, guid: 20c4a3ded3c9f7f469d42dd5279dbb8f, type: 2}
   currentTitanium:
