@@ -77,6 +77,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8752dc3ecf91a854d87ae80207e26004, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buildingType: 0
+  titaniumCost:
+    UseLocal: 0
+    LocalValue: 0
+    Variable: {fileID: 0}
+  fuelCost:
+    UseLocal: 0
+    LocalValue: 0
+    Variable: {fileID: 0}
+  DroneCost:
+    UseLocal: 0
+    LocalValue: 0
+    Variable: {fileID: 0}
+  titaniumProduction:
+    UseLocal: 0
+    LocalValue: 0
+    Variable: {fileID: 0}
+  fuelProduction:
+    UseLocal: 0
+    LocalValue: 0
+    Variable: {fileID: 0}
+  DroneProduction:
+    UseLocal: 0
+    LocalValue: 0
+    Variable: {fileID: 0}
+  currentTitanium:
+    UseLocal: 0
+    LocalValue: 0
+    Variable: {fileID: 11400000, guid: 01f25cb932dc39a4ab66fe8cffdd5754, type: 2}
+  currentFuel:
+    UseLocal: 0
+    LocalValue: 0
+    Variable: {fileID: 11400000, guid: ffbca27845237a64ba083d094a0c067f, type: 2}
+  currentDrones:
+    UseLocal: 0
+    LocalValue: 0
+    Variable: {fileID: 11400000, guid: 9498ca06b58d7a64a82d913fe2715a9f, type: 2}
+  fuelIncreaseRate:
+    UseLocal: 0
+    LocalValue: 0
+    Variable: {fileID: 11400000, guid: b3ae98784cdc79245a2cebfe6fd24c72, type: 2}
+  fuelDecreaseRate:
+    UseLocal: 0
+    LocalValue: 0
+    Variable: {fileID: 11400000, guid: 36de0b20a78ec2247b609e9cb04b6109, type: 2}
+  titaniumIncreaseRate:
+    UseLocal: 0
+    LocalValue: 0
+    Variable: {fileID: 11400000, guid: 2931b3132f67b9440bc1cb5a79f626b4, type: 2}
 --- !u!1 &3214861807211517193
 GameObject:
   m_ObjectHideFlags: 0
