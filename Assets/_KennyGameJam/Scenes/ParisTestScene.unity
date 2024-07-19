@@ -1084,7 +1084,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 690494111230429194, guid: 1f368c04d14f33d45aee11a5dfc9c132, type: 3}
       propertyPath: m_Name
-      value: Oxygen_Bar
+      value: Fuel_Bar
       objectReference: {fileID: 0}
     - target: {fileID: 3525845723783556142, guid: 1f368c04d14f33d45aee11a5dfc9c132, type: 3}
       propertyPath: m_LocalPosition.x

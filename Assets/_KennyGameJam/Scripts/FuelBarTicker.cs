@@ -4,11 +4,11 @@ using KenneyJam.Enums;
 
 namespace KenneyJam.UI
 {
-    public class OxygenBarTicker : MonoBehaviour
+    public class FuelBarTicker : MonoBehaviour
     {
-        [SerializeField] private FloatVariable oxygenTotal;
-        [SerializeField] private FloatVariable oxygenDecreaseRate;
-        [SerializeField] private FloatVariable oxygenIncreaseRate;
+        [SerializeField] private FloatVariable fuelTotal;
+        [SerializeField] private FloatVariable fuelDecreaseRate;
+        [SerializeField] private FloatVariable fuelIncreaseRate;
 
         private float _currentTime;
 
@@ -35,11 +35,11 @@ namespace KenneyJam.UI
                     switch (tickerState)
                     {
                         case TickerState.Decreasing:
-                            DecreaseOxygen();
+                            Decrease();
                             _currentTime = 0f;
                             break;
                         case TickerState.Increasing:
-                            IncreaseOxygen();
+                            Increase();
                             _currentTime = 0f;
                             break;
                         case TickerState.Idle:
@@ -51,22 +51,22 @@ namespace KenneyJam.UI
             }
         }
 
-        // Method to update the OxygenTotal value
-        private void DecreaseOxygen()
+        // Method to update the FuelTotal value
+        private void Decrease()
         {
-            oxygenTotal.Value -= 1.0f * oxygenDecreaseRate;
+            fuelTotal.Value -= 1.0f * fuelDecreaseRate;
 
-            if (oxygenTotal.Value <= 0.0f)
+            if (fuelTotal.Value <= 0.0f)
             {
                 GameMannager.instance.gameState = GameState.GameOver;
                 _isRunning = false;
             }
         }
 
-        // Method to update the OxygenTotal value
-        private void IncreaseOxygen()
+        // Method to update the FuelTotal value
+        private void Increase()
         {
-            oxygenTotal.Value += 1.0f * oxygenIncreaseRate;
+            fuelTotal.Value += 1.0f * fuelIncreaseRate;
         }
     }
 

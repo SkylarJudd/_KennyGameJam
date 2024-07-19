@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3525845723783556142}
   - component: {fileID: 7692910179559822214}
   m_Layer: 0
-  m_Name: Oxygen_Bar
+  m_Name: Fuel_Bar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,9 +45,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d83c580369992a49a2a6245449e4550, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  oxygenTotal: {fileID: 11400000, guid: d1b0ce0484c833947b0120eade6b2504, type: 2}
-  oxygenDecreaseRate: {fileID: 11400000, guid: e35e00d57016ac94e87f142dc7ab31e1, type: 2}
-  oxygenIncreaseRate: {fileID: 11400000, guid: 2983e235ac6a828429bdb1dbf21063bc, type: 2}
+  fuelTotal: {fileID: 0}
+  fuelDecreaseRate: {fileID: 0}
+  fuelIncreaseRate: {fileID: 0}
   tickerState: 0
 --- !u!1 &999801372941904738
 GameObject:
@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 1775234367713797819}
   - component: {fileID: 1331825347653576496}
   m_Layer: 0
-  m_Name: Oxygen_Fill_Background
+  m_Name: Fuel_Fill_Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -212,7 +212,7 @@ GameObject:
   - component: {fileID: 7797720002918166781}
   - component: {fileID: 4570669280188209821}
   m_Layer: 0
-  m_Name: Oxygen_Fill_Bar
+  m_Name: Fuel_Fill_Bar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -305,7 +305,7 @@ GameObject:
   - component: {fileID: 8225491817671779864}
   - component: {fileID: 1905107933904682521}
   m_Layer: 0
-  m_Name: Oxygen_Bar (Canvas)
+  m_Name: Fuel_Bar (Canvas)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -565,7 +565,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6867585681220820525}
   m_Layer: 0
-  m_Name: Oxygen_Bar_UI
+  m_Name: Fuel_Bar_UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
