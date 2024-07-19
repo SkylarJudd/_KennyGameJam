@@ -1147,6 +1147,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panSpeed: 20
+  moveSpeed: 10
+  zoomSpeed: 10
 --- !u!1 &2073531802
 GameObject:
   m_ObjectHideFlags: 0
