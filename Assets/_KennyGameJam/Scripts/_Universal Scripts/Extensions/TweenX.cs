@@ -15,4 +15,25 @@ public static class TweenX
     {
         Camera.main.DOShakePosition(_duration, _strength);
     }
+
+    public static void TweenRotation(Transform _transform, Vector3 _rotation, float _duration, bool _pingPong = false, Ease _ease = Ease.InOutSine)
+    {
+        Vector3 fullRotation = _transform.eulerAngles + _rotation; // Add the desired rotation to the current rotation
+
+        if (_pingPong)
+        {
+            _transform.DOLocalRotate(fullRotation, _duration, RotateMode.FastBeyond360).SetEase(_ease).SetLoops(-1, LoopType.Yoyo);
+        }
+        else
+        {
+            _transform.DOLocalRotate(fullRotation, _duration, RotateMode.FastBeyond360).SetEase(_ease);
+        }
+    }
+
+
+    public static void StopTween(Transform _transform)
+    {
+        _transform.DOKill();
+    }
+
 }
