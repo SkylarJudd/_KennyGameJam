@@ -20,6 +20,12 @@ public class PlayerInteraction : Singleton<PlayerInteraction>
     [SerializeField] private GameObject titaniumMinerefab;
 
     Vector3 mouseWorldPosition = Vector3.zero;
+
+    public void Update()
+    {
+        OnHover();
+    }
+
     public void OnClick(InputAction.CallbackContext _context)
     {
 
