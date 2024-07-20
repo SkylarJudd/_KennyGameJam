@@ -9,8 +9,8 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
-    path: Assets/_KennyGameJam/Scenes/MainScene_Testing.unity
-    guid: 09a101f1d1f93554a9a56f62eaa0309e
+    path: Assets/_KennyGameJam/Scenes/Main.unity
+    guid: 0854ccf34556df845bc93d5489e50584
   - enabled: 1
     path: Assets/_KennyGameJam/Scenes/PlayableEnvironment.unity
     guid: 3fb53d8fa9104064693c60dbde72ba48
