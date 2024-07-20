@@ -69,7 +69,7 @@ namespace KenneyJam.UI
         // Method to update the FuelTotal value
         private void Decrease()
         {
-            current.Value -= decreaseRate + increaseRate;
+            current.Value -= decreaseRate - increaseRate;
 
             if (current.Value <= 0)
             {

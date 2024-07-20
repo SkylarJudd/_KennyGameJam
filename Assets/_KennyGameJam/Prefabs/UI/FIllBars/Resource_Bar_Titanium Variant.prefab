@@ -47,7 +47,7 @@ PrefabInstance:
     - target: {fileID: 1701811004303332276, guid: 2206189ef26492d48b74b77844837bd9, type: 3}
       propertyPath: increaseRate.Variable
       value: 
-      objectReference: {fileID: 11400000, guid: 088a4abf2d5e44d48bf43ce881e8d7e8, type: 2}
+      objectReference: {fileID: 11400000, guid: 2931b3132f67b9440bc1cb5a79f626b4, type: 2}
     - target: {fileID: 5175507596394011746, guid: 2206189ef26492d48b74b77844837bd9, type: 3}
       propertyPath: _intVariable
       value: 

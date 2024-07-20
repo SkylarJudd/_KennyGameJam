@@ -49,7 +49,7 @@ public class BuildableObject : MonoBehaviour
     {
         currentTitanium.Value -= _destruction == true ? -titaniumCost.Value :  titaniumCost.Value;
         currentDrones.Value -= _destruction == true ? -DroneCost.Value : DroneCost.Value;
-        fuelDecreaseRate.Value -= _destruction == true ? -fuelCost.Value : fuelCost.Value;
+        fuelDecreaseRate.Value += _destruction == true ? -fuelCost.Value : fuelCost.Value;
     }
 
     void HandleProduction(bool _destruction)
