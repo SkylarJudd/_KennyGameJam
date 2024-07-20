@@ -3274,6 +3274,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.x
       value: -62.305
       objectReference: {fileID: 0}
+    - target: {fileID: 7256636317269868867, guid: 82c18fecca87d1a4ca01d25bb6452b93, type: 3}
+      propertyPath: 'm_Materials.Array.data[2]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 9f7a370a54da74e4da7b832d5f309091, type: 2}
     - target: {fileID: 8418609638280728255, guid: 82c18fecca87d1a4ca01d25bb6452b93, type: 3}
       propertyPath: m_Name
       value: turret_double
@@ -3722,6 +3726,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4007893280135798562}
     m_Modifications:
+    - target: {fileID: 2685337690052190830, guid: a26bd2c938add624f96690ca817ecf58, type: 3}
+      propertyPath: 'm_Materials.Array.data[2]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 9f7a370a54da74e4da7b832d5f309091, type: 2}
     - target: {fileID: 3823293001348192513, guid: a26bd2c938add624f96690ca817ecf58, type: 3}
       propertyPath: m_LocalScale.y
       value: 2.3195398
@@ -4544,6 +4552,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.x
       value: -62.305
       objectReference: {fileID: 0}
+    - target: {fileID: 7256636317269868867, guid: 82c18fecca87d1a4ca01d25bb6452b93, type: 3}
+      propertyPath: 'm_Materials.Array.data[2]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 9f7a370a54da74e4da7b832d5f309091, type: 2}
     - target: {fileID: 8418609638280728255, guid: 82c18fecca87d1a4ca01d25bb6452b93, type: 3}
       propertyPath: m_Name
       value: turret_double
@@ -5304,6 +5316,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.x
       value: -62.305
       objectReference: {fileID: 0}
+    - target: {fileID: 7256636317269868867, guid: 82c18fecca87d1a4ca01d25bb6452b93, type: 3}
+      propertyPath: 'm_Materials.Array.data[2]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 9f7a370a54da74e4da7b832d5f309091, type: 2}
     - target: {fileID: 8418609638280728255, guid: 82c18fecca87d1a4ca01d25bb6452b93, type: 3}
       propertyPath: m_Name
       value: turret_double
@@ -7460,6 +7476,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 4d16676f866ba1c49bd939f7ff1f2f27, type: 3}
+      propertyPath: 'm_Materials.Array.data[3]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 9f7a370a54da74e4da7b832d5f309091, type: 2}
     - target: {fileID: 919132149155446097, guid: 4d16676f866ba1c49bd939f7ff1f2f27, type: 3}
       propertyPath: m_Name
       value: monorail_trainPassenger
@@ -8534,6 +8554,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6193198258524960690}
     m_Modifications:
+    - target: {fileID: 2685337690052190830, guid: a26bd2c938add624f96690ca817ecf58, type: 3}
+      propertyPath: 'm_Materials.Array.data[2]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 9f7a370a54da74e4da7b832d5f309091, type: 2}
     - target: {fileID: 3823293001348192513, guid: a26bd2c938add624f96690ca817ecf58, type: 3}
       propertyPath: m_LocalScale.y
       value: 2.3195398
