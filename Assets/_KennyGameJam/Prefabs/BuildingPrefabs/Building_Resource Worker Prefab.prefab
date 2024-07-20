@@ -62,8 +62,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3953679047800424087, guid: 6ce744562b8fb8a48971b2b8cc376376, type: 3}
       propertyPath: fuelCost.UseLocal
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3953679047800424087, guid: 6ce744562b8fb8a48971b2b8cc376376, type: 3}
+      propertyPath: fuelCost.Variable
+      value: 
+      objectReference: {fileID: 11400000, guid: f916d3127b050c340bb3f769a03304fd, type: 2}
     - target: {fileID: 3953679047800424087, guid: 6ce744562b8fb8a48971b2b8cc376376, type: 3}
       propertyPath: DroneCost.Variable
       value: 
@@ -82,8 +86,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3953679047800424087, guid: 6ce744562b8fb8a48971b2b8cc376376, type: 3}
       propertyPath: titaniumProduction.UseLocal
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3953679047800424087, guid: 6ce744562b8fb8a48971b2b8cc376376, type: 3}
+      propertyPath: titaniumProduction.Variable
+      value: 
+      objectReference: {fileID: 11400000, guid: ad5307117416e3849afd5ed9e221f20e, type: 2}
     - target: {fileID: 3953679047800424087, guid: 6ce744562b8fb8a48971b2b8cc376376, type: 3}
       propertyPath: titaniumProduction.LocalValue
       value: 4

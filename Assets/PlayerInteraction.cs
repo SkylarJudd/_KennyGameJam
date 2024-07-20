@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -10,7 +11,6 @@ public class PlayerInteraction : Singleton<PlayerInteraction>
     [SerializeField] private LayerMask buildableBiltLayerMask;
 
     [SerializeField] private GameObject lastClickedBuildable;
-    [SerializeField] private GameObject lastClickedGround;
 
 
 
@@ -27,33 +27,49 @@ public class PlayerInteraction : Singleton<PlayerInteraction>
             return;
 
         Ray ray = m_Camera.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out RaycastHit raycastHit, Mathf.Infinity, buildableLayerMask))
+
+
+        if (Physics.Raycast(ray, out RaycastHit raycastHit3, Mathf.Infinity))
         {
-            lastClickedBuildable = raycastHit.transform.gameObject;
-            BuildableArea buildableArea = raycastHit.transform.gameObject.GetComponent<BuildableArea>();
+            LayerMask layerMask = raycastHit3.transform.gameObject.layer;
 
-
-            if (buildableArea.built != true)
+            switch (LayerMask.LayerToName(layerMask))
             {
-                mouseWorldPosition = raycastHit.point;
-                GameEvents.PlayerClickBuildable(lastClickedBuildable);
-                return;
-            }  
-        }
-        else if (Physics.Raycast(ray, out RaycastHit raycastHit2, Mathf.Infinity, buildableBiltLayerMask))
-        {
-            lastClickedBuildable = raycastHit2.transform.gameObject;
-            mouseWorldPosition = raycastHit2.point;
-            GameEvents.PlayerClickBuildableBuilt(lastClickedBuildable.GetComponent<BuildableObject>().UiTransform.gameObject);
-            return;
-        }
+                case "Buildable":
+                    print("Clicked On Dirt");
+                    lastClickedBuildable = raycastHit3.transform.gameObject;
+                    BuildableArea buildableArea = raycastHit3.transform.gameObject.GetComponent<BuildableArea>();
 
+                    if (buildableArea.built != true)
+                    {
+                        mouseWorldPosition = raycastHit3.point;
+                        GameEvents.PlayerClickBuildable(lastClickedBuildable);
+                        return;
+                    }
+                    return;
+                case "Building":
+
+                    print("Clicked On Building");
+                    lastClickedBuildable = raycastHit3.transform.gameObject;
+                    mouseWorldPosition = raycastHit3.point;
+                    GameEvents.PlayerClickBuildableBuilt(lastClickedBuildable.GetComponent<BuildableObject>().UiTransform.gameObject);
+                    return;
+                default:
+                    return;
+            }
+        }
         else
         {
-            
+
+            StartCoroutine(CloseWindowDelay());
         }
     }
 
+    private IEnumerator CloseWindowDelay()
+    {
+        yield return new WaitForSeconds(0.1f);
+        GameEvents.PlayerClickNotOnBuildable(gameObject);
+    }
     public void BuildUIClicked(BuildUiClickState _buildUiClickState)
     {
         switch (_buildUiClickState)
@@ -77,8 +93,23 @@ public class PlayerInteraction : Singleton<PlayerInteraction>
     private void InstatiateBuildable(GameObject _Buildable)
     {
         BuildableArea area = lastClickedBuildable.GetComponent<BuildableArea>();
-        area.built = true;
-        Instantiate(_Buildable, area.connectionTransform);
+        
+        BuildableObject buildable = _Buildable.GetComponent<BuildableObject>();
+        if (buildable != null)
+        {
+            if ((buildable.currentTitanium - buildable.titaniumCost) >= 0 && (buildable.currentDrones - buildable.DroneCost) >= 0)
+            {
+                GameObject spawnedBuilding = Instantiate(_Buildable, area.connectionTransform);
+                area.built = true;
+
+            }
+            else
+            {
+                print("Not Enough Money");
+            }
+        }
+       
+        
     }
 
     public void DestroyBuilding()

@@ -62,12 +62,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3953679047800424087, guid: 6ce744562b8fb8a48971b2b8cc376376, type: 3}
       propertyPath: fuelCost.UseLocal
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3953679047800424087, guid: 6ce744562b8fb8a48971b2b8cc376376, type: 3}
+      propertyPath: fuelCost.Variable
+      value: 
+      objectReference: {fileID: 11400000, guid: 738af067782c44e48bd4e3149a88b047, type: 2}
+    - target: {fileID: 3953679047800424087, guid: 6ce744562b8fb8a48971b2b8cc376376, type: 3}
+      propertyPath: DroneCost.UseLocal
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3953679047800424087, guid: 6ce744562b8fb8a48971b2b8cc376376, type: 3}
       propertyPath: DroneCost.Variable
       value: 
-      objectReference: {fileID: 11400000, guid: 738af067782c44e48bd4e3149a88b047, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 3953679047800424087, guid: 6ce744562b8fb8a48971b2b8cc376376, type: 3}
       propertyPath: fuelCost.LocalValue
       value: 2
@@ -82,8 +90,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3953679047800424087, guid: 6ce744562b8fb8a48971b2b8cc376376, type: 3}
       propertyPath: DroneProduction.UseLocal
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3953679047800424087, guid: 6ce744562b8fb8a48971b2b8cc376376, type: 3}
+      propertyPath: DroneProduction.Variable
+      value: 
+      objectReference: {fileID: 11400000, guid: 20c4a3ded3c9f7f469d42dd5279dbb8f, type: 2}
     - target: {fileID: 3953679047800424087, guid: 6ce744562b8fb8a48971b2b8cc376376, type: 3}
       propertyPath: DroneProduction.LocalValue
       value: 2

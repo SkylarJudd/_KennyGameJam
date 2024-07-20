@@ -14,9 +14,9 @@ public class BuildableObject : MonoBehaviour
     public Transform UiTransform;
 
     [Header("Building Cost")]
-    [SerializeField] private IntReference titaniumCost;
+    public IntReference titaniumCost;
     [SerializeField] private IntReference fuelCost;
-    [SerializeField] private IntReference DroneCost;
+    public IntReference DroneCost;
 
     [Header("Building Production")]
     [SerializeField] private IntReference titaniumProduction;
@@ -24,9 +24,9 @@ public class BuildableObject : MonoBehaviour
     [SerializeField] private IntReference DroneProduction;
 
     [Header("VariableReferences")]
-    [SerializeField] private IntReference currentTitanium;
+    public IntReference currentTitanium;
     [SerializeField] private IntReference currentFuel;
-    [SerializeField] private IntReference currentDrones;
+    public IntReference currentDrones;
 
     [SerializeField] private IntReference fuelIncreaseRate;
     [SerializeField] private IntReference fuelDecreaseRate;
@@ -35,21 +35,28 @@ public class BuildableObject : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void OnEnable()
     {
-        HandleCosts();
-        HandleProduction();
+        HandleCosts(false);
+        HandleProduction(false);
     }
 
-    void HandleCosts()
+    private void OnDisable()
     {
-        currentTitanium.Value -= titaniumCost.Value;
-        currentDrones.Value -= DroneCost.Value;
-        fuelDecreaseRate.Value += fuelCost.Value;
+        HandleCosts(true);
+        HandleProduction(true);
     }
 
-    void HandleProduction()
+    void HandleCosts(bool _destruction)
     {
-        fuelIncreaseRate.Value += fuelProduction.Value;
-        titaniumIncreaseRate.Value += titaniumProduction.Value;
-        currentDrones.Value += DroneProduction.Value;
+        currentTitanium.Value -= _destruction == true ? -titaniumCost.Value :  titaniumCost.Value;
+        currentDrones.Value -= _destruction == true ? -DroneCost.Value : DroneCost.Value;
+        fuelDecreaseRate.Value -= _destruction == true ? -fuelCost.Value : fuelCost.Value;
+    }
+
+    void HandleProduction(bool _destruction)
+    {
+        fuelIncreaseRate.Value += _destruction == true ? -fuelProduction.Value : fuelProduction.Value;
+        titaniumIncreaseRate.Value += _destruction == true ? -titaniumProduction.Value : titaniumProduction.Value;
+        currentDrones.Value += _destruction == true ? -DroneProduction.Value : DroneProduction.Value;
+
     }
 }
