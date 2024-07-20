@@ -6,6 +6,14 @@ public class CameraController : MonoBehaviour
     [SerializeField] private float panSpeed = 20f;
     [SerializeField] private float moveSpeed = 10f;
     [SerializeField] private float zoomSpeed = 10f;
+    [SerializeField] private float rotationSpeed = 100f;
+
+    // Rotation limits
+    [SerializeField] private float minYAngle = -20f;
+    [SerializeField] private float maxYAngle = 80f;
+
+    // Private variables to keep track of the current rotation
+    private float currentXRotation = 0f;
 
     // Update is called once per frame
     void Update()
@@ -30,5 +38,16 @@ public class CameraController : MonoBehaviour
         float scroll = Input.GetAxis("Mouse ScrollWheel");
         Vector3 zoom = transform.forward * scroll * zoomSpeed;
         transform.Translate(zoom, Space.World);
+
+        // Handle camera rotation with the right mouse button
+        if (Input.GetMouseButton(1))
+        {
+            float mouseY = Input.GetAxis("Mouse Y");
+            currentXRotation -= mouseY * rotationSpeed * Time.deltaTime;
+            currentXRotation = Mathf.Clamp(currentXRotation, minYAngle, maxYAngle);
+
+            Vector3 rotation = new Vector3(currentXRotation, transform.eulerAngles.y, 0);
+            transform.eulerAngles = rotation;
+        }
     }
 }
