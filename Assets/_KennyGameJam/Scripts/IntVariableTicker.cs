@@ -45,7 +45,7 @@ namespace KenneyJam.UI
                     tickerState = TickerState.Idle;
                 }
 
-                if(_currentTime >= 3f)
+                if(_currentTime >= tickRate)
                 {
                     switch (tickerState)
                     {
