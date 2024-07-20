@@ -1,21 +1,21 @@
 using DG.Tweening;
 using UnityEngine;
 
-public class PositionTween : MonoBehaviour
+public class ScaleTween : MonoBehaviour
 {
     [SerializeField] private bool _enabled;
-    [SerializeField] private Vector3 position;
+    [SerializeField] private Vector3 scale;
     [SerializeField] private float duration;
 
     [SerializeField] private bool _yoyo;
     [SerializeField] private Ease _easingType;
 
     private bool _isRunning;
-    private Vector3 _cachedPosition;
+    private Vector3 _cachedScale;
 
     private void Start()
     {
-        _cachedPosition = transform.localPosition;
+        _cachedScale = transform.localScale;
     }
 
     // Update is called once per frame
@@ -24,7 +24,7 @@ public class PositionTween : MonoBehaviour
         if(!_enabled)
         {
             _isRunning = false;
-            transform.localPosition = _cachedPosition;
+            transform.localScale = _cachedScale;
             TweenX.StopTween(transform);
             return;
         }
@@ -41,7 +41,7 @@ public class PositionTween : MonoBehaviour
             return;
         }
 
-        TweenX.TweenPosition(transform, position, duration, _yoyo, _easingType);
+        TweenX.TweenScale(transform, scale, duration, _yoyo, _easingType);
 
         _isRunning = true;
     }

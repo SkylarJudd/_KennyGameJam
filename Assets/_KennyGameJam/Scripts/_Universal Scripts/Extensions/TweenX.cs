@@ -32,7 +32,7 @@ public static class TweenX
 
     public static void TweenPosition(Transform _transform, Vector3 _position, float _duration, bool _pingPong = false, Ease _ease = Ease.InOutSine)
     {
-        Vector3 targetPosition = _transform.position + _position; // Calculate the target position
+        Vector3 targetPosition = _transform.localPosition + _position; // Calculate the target position
 
         if (_pingPong)
         {
@@ -43,6 +43,21 @@ public static class TweenX
             _transform.DOLocalMove(targetPosition, _duration).SetEase(_ease);
         }
     }
+
+    public static void TweenScale(Transform _transform, Vector3 _scale, float _duration, bool _pingPong = false, Ease _ease = Ease.InOutSine)
+    {
+        Vector3 targetScale = _transform.localScale + _scale; // Calculate the target scale
+
+        if (_pingPong)
+        {
+            _transform.DOScale(targetScale, _duration).SetEase(_ease).SetLoops(-1, LoopType.Yoyo);
+        }
+        else
+        {
+            _transform.DOScale(targetScale, _duration).SetEase(_ease);
+        }
+    }
+
 
 
     public static void StopTween(Transform _transform)
