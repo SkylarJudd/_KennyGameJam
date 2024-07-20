@@ -11,6 +11,7 @@ public enum BuildingType
 public class BuildableObject : MonoBehaviour
 {
     [SerializeField] private BuildingType buildingType;
+    public Transform UiTransform;
 
     [Header("Building Cost")]
     [SerializeField] private IntReference titaniumCost;

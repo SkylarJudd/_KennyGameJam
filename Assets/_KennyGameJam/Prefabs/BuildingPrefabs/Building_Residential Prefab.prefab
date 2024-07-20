@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Building_Residential Prefab
       objectReference: {fileID: 0}
+    - target: {fileID: 2883229455037009406, guid: 6ce744562b8fb8a48971b2b8cc376376, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.27
+      objectReference: {fileID: 0}
     - target: {fileID: 3934819403896592562, guid: 6ce744562b8fb8a48971b2b8cc376376, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -52,14 +56,79 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3953679047800424087, guid: 6ce744562b8fb8a48971b2b8cc376376, type: 3}
+      propertyPath: buildingType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3953679047800424087, guid: 6ce744562b8fb8a48971b2b8cc376376, type: 3}
+      propertyPath: fuelCost.UseLocal
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3953679047800424087, guid: 6ce744562b8fb8a48971b2b8cc376376, type: 3}
+      propertyPath: DroneCost.Variable
+      value: 
+      objectReference: {fileID: 11400000, guid: 738af067782c44e48bd4e3149a88b047, type: 2}
+    - target: {fileID: 3953679047800424087, guid: 6ce744562b8fb8a48971b2b8cc376376, type: 3}
+      propertyPath: fuelCost.LocalValue
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3953679047800424087, guid: 6ce744562b8fb8a48971b2b8cc376376, type: 3}
+      propertyPath: titaniumCost.Variable
+      value: 
+      objectReference: {fileID: 11400000, guid: c161d541cf8fd3d419757478738ab261, type: 2}
+    - target: {fileID: 3953679047800424087, guid: 6ce744562b8fb8a48971b2b8cc376376, type: 3}
+      propertyPath: fuelProduction.UseLocal
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3953679047800424087, guid: 6ce744562b8fb8a48971b2b8cc376376, type: 3}
+      propertyPath: DroneProduction.UseLocal
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3953679047800424087, guid: 6ce744562b8fb8a48971b2b8cc376376, type: 3}
+      propertyPath: DroneProduction.LocalValue
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3953679047800424087, guid: 6ce744562b8fb8a48971b2b8cc376376, type: 3}
+      propertyPath: titaniumProduction.UseLocal
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 7026540877506987736, guid: 6ce744562b8fb8a48971b2b8cc376376, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1893048569894926272}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1954192294613376647, guid: 6ce744562b8fb8a48971b2b8cc376376, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 258696191388681401}
   m_SourcePrefab: {fileID: 100100000, guid: 6ce744562b8fb8a48971b2b8cc376376, type: 3}
+--- !u!1 &214727384616258485 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1954192294613376647, guid: 6ce744562b8fb8a48971b2b8cc376376, type: 3}
+  m_PrefabInstance: {fileID: 1865742464596677938}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &258696191388681401
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 214727384616258485}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3, y: 4.64, z: 3}
+  m_Center: {x: 0, y: 2.28, z: 0}
 --- !u!4 &8675968429573100522 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7026540877506987736, guid: 6ce744562b8fb8a48971b2b8cc376376, type: 3}

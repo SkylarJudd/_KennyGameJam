@@ -10,7 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1527748746400009990}
   - component: {fileID: 7144552636013149750}
-  m_Layer: 0
+  - component: {fileID: 5285175058656543178}
+  m_Layer: 6
   m_Name: BuildableArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47,10 +48,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connectionTransform: {fileID: 3660879132506247621}
-  northConnectionPrefab: {fileID: 0}
-  southConnectionPrefab: {fileID: 0}
-  eastConnectionPrefab: {fileID: 0}
-  nestConnectionPrefab: {fileID: 0}
+--- !u!65 &5285175058656543178
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3222052522183355349}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 5, y: 0.1, z: 5}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6099090500375525203
 GameObject:
   m_ObjectHideFlags: 0

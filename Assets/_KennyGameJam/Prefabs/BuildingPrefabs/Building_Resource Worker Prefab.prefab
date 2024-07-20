@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Building_Resource Worker Prefab
       objectReference: {fileID: 0}
+    - target: {fileID: 2883229455037009406, guid: 6ce744562b8fb8a48971b2b8cc376376, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.95
+      objectReference: {fileID: 0}
     - target: {fileID: 3934819403896592562, guid: 6ce744562b8fb8a48971b2b8cc376376, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -52,14 +56,75 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3953679047800424087, guid: 6ce744562b8fb8a48971b2b8cc376376, type: 3}
+      propertyPath: buildingType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3953679047800424087, guid: 6ce744562b8fb8a48971b2b8cc376376, type: 3}
+      propertyPath: fuelCost.UseLocal
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3953679047800424087, guid: 6ce744562b8fb8a48971b2b8cc376376, type: 3}
+      propertyPath: DroneCost.Variable
+      value: 
+      objectReference: {fileID: 11400000, guid: 74fde320e4230994895842f418a61ff4, type: 2}
+    - target: {fileID: 3953679047800424087, guid: 6ce744562b8fb8a48971b2b8cc376376, type: 3}
+      propertyPath: titaniumCost.Variable
+      value: 
+      objectReference: {fileID: 11400000, guid: 9ea92e8123dd5534da99e8109e0e958f, type: 2}
+    - target: {fileID: 3953679047800424087, guid: 6ce744562b8fb8a48971b2b8cc376376, type: 3}
+      propertyPath: fuelProduction.UseLocal
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3953679047800424087, guid: 6ce744562b8fb8a48971b2b8cc376376, type: 3}
+      propertyPath: DroneProduction.UseLocal
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3953679047800424087, guid: 6ce744562b8fb8a48971b2b8cc376376, type: 3}
+      propertyPath: titaniumProduction.UseLocal
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3953679047800424087, guid: 6ce744562b8fb8a48971b2b8cc376376, type: 3}
+      propertyPath: titaniumProduction.LocalValue
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 3934819403896592562, guid: 6ce744562b8fb8a48971b2b8cc376376, type: 3}
       insertIndex: 1
       addedObject: {fileID: 881059309679731121}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1954192294613376647, guid: 6ce744562b8fb8a48971b2b8cc376376, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -7650838187308397455}
   m_SourcePrefab: {fileID: 100100000, guid: 6ce744562b8fb8a48971b2b8cc376376, type: 3}
+--- !u!1 &444017631746513502 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1954192294613376647, guid: 6ce744562b8fb8a48971b2b8cc376376, type: 3}
+  m_PrefabInstance: {fileID: 2105389013798913241}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &-7650838187308397455
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 444017631746513502}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3, y: 3.94, z: 3}
+  m_Center: {x: 0, y: 1.62, z: 0}
 --- !u!4 &3147049949090061419 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3934819403896592562, guid: 6ce744562b8fb8a48971b2b8cc376376, type: 3}
