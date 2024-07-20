@@ -25,6 +25,7 @@ public class UIMannager : Singleton<UIMannager>
         buildMenuOpen = true;
         buildUI.SetActive(true);
         buildUI.transform.position = position.position;
+        BuiltUiHide();
     }
     public void BuiltUiShow(Transform position)
     {
@@ -32,6 +33,7 @@ public class UIMannager : Singleton<UIMannager>
         builtMenuOpen = true;
         builtUI.SetActive(true);
         builtUI.transform.position = position.position;
+        BuildUiHide();
     }
 
     public void BuildUiHide()

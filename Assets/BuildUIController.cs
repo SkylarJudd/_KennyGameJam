@@ -25,7 +25,7 @@ public class BuildUIController : GameBehaviour
     }
 
     public void OnTitaniumMineClick() => _UIM.OnTitaniumMinelick();
-  
+
     public void OnTitaniumMineMouseOver()
     {
 
@@ -35,9 +35,13 @@ public class BuildUIController : GameBehaviour
 
     }
 
-    public void OnExitBuild () => _UIM.BuildUiHide();
+    public void OnExitBuild() => _UIM.BuildUiHide();
     public void OnExitBuilt() => _UIM.BuiltUiHide();
-    
+
+    public void OnDestroyClick() => _UIM.OnDestroyClick();
+
+
+
 
 
 
