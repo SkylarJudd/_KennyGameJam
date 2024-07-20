@@ -3,51 +3,42 @@ using UnityEngine.UIElements;
 
 public class BuildUIController : GameBehaviour
 {
-    [SerializeField] GameObject buildUI;
-     private void GameEvents_OnPlayerClickBuildable(GameObject obj)
-    {
-        
-        BuildUiShow(obj.transform);
-    }
-    public void BuildUiShow(Transform position)
-    {
-        print("called");
-        buildUI.SetActive(true);
-        buildUI.transform.position = position.position;
-    }
-
-    public void BuildUiHide()
-    {
-        buildUI.SetActive(true);
-    }
-
-    public void OnFuelRefineryClick()
+    public void OnFuelRefineryClick() => _UIM.OnFuelRefineryClick();
+    public void OnFuelRefineryMouseOver()
     {
 
     }
-    public void OnRefuelingStationClick()
-    {
-
-    }
-    public void OnTitaniumMinelick()
+    public void OnFuelRefineryMouseExit()
     {
 
     }
 
-    private void OnEnable()
+
+    public void OnRefuelingStationClick() => _UIM.OnRefuelingStationClick();
+    public void OnRefuelingStationMouseOver()
     {
 
-        GameEvents.OnPlayerClickBuildable += GameEvents_OnPlayerClickBuildable; ;
-       
+    }
+    public void OnRefuelingStationMouseExit()
+    {
 
     }
 
-    private void OnDisable()
+    public void OnTitaniumMineClick() => _UIM.OnTitaniumMinelick();
+  
+    public void OnTitaniumMineMouseOver()
     {
-        
-        GameEvents.OnPlayerClickBuildable -= GameEvents_OnPlayerClickBuildable;
-        
 
     }
+    public void OnTitaniumMineMouseExit()
+    {
+
+    }
+
+    public void OnExitBuild () => _UIM.BuildUiHide();
+    public void OnExitBuilt() => _UIM.BuiltUiHide();
+    
+
+
 
 }
