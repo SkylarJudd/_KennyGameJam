@@ -12,6 +12,7 @@ public static class GameEvents
     public static event Action<GameObject> OnPlayerClickBuildable = null;
     public static event Action<GameObject> OnPlayerClickBuildableBuilt = null;
     public static event Action<GameObject> OnPlayerClickNotOnBuildable = null;
+    public static event Action<GameObject> OnPlayerMouseOverBuildable = null;
 
 
     #region ("Exsample of adding action")
@@ -25,6 +26,11 @@ public static class GameEvents
     {
 
         OnPlayerClickBuildable?.Invoke(go);
+    }
+
+    public static void PlayerMouseOverBuildable(GameObject go)
+    {
+        OnPlayerMouseOverBuildable?.Invoke(go);
     }
 
     public static void PlayerClickBuildableBuilt(GameObject go)

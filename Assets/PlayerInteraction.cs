@@ -64,6 +64,40 @@ public class PlayerInteraction : Singleton<PlayerInteraction>
             StartCoroutine(CloseWindowDelay());
         }
     }
+    
+    public void OnHover()
+    {
+        Ray ray = m_Camera.ScreenPointToRay(Input.mousePosition);
+
+        if (Physics.Raycast(ray, out RaycastHit raycastHit3, Mathf.Infinity))
+        {
+            LayerMask layerMask = raycastHit3.transform.gameObject.layer;
+
+            switch (LayerMask.LayerToName(layerMask))
+            {
+                case "Buildable":
+                    lastClickedBuildable = raycastHit3.transform.gameObject;
+                    BuildableArea buildableArea = raycastHit3.transform.gameObject.GetComponent<BuildableArea>();
+                    GameObject lastSelectedBuildableArea = raycastHit3.transform.gameObject;
+
+                    if (buildableArea.built != true)
+                    {
+                        mouseWorldPosition = raycastHit3.point;
+                        GameEvents.PlayerMouseOverBuildable(lastSelectedBuildableArea);
+                        return;
+                    }
+                    return;
+                case "Building":
+                default:
+                    return;
+            }
+        }
+        else
+        {
+
+            return;
+        }
+    }
 
     private IEnumerator CloseWindowDelay()
     {
