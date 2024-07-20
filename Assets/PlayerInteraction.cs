@@ -10,6 +10,7 @@ public class PlayerInteraction : Singleton<PlayerInteraction>
     [SerializeField] private LayerMask buildableBiltLayerMask;
 
     [SerializeField] private GameObject lastClickedBuildable;
+    [SerializeField] private GameObject lastClickedGround;
 
 
 
@@ -29,8 +30,10 @@ public class PlayerInteraction : Singleton<PlayerInteraction>
         if (Physics.Raycast(ray, out RaycastHit raycastHit, Mathf.Infinity, buildableLayerMask))
         {
             lastClickedBuildable = raycastHit.transform.gameObject;
+            BuildableArea buildableArea = raycastHit.transform.gameObject.GetComponent<BuildableArea>();
 
-            if (lastClickedBuildable .GetComponent<BuildableArea>().built != true)
+
+            if (buildableArea.built != true)
             {
                 mouseWorldPosition = raycastHit.point;
                 GameEvents.PlayerClickBuildable(lastClickedBuildable);
@@ -74,11 +77,13 @@ public class PlayerInteraction : Singleton<PlayerInteraction>
     private void InstatiateBuildable(GameObject _Buildable)
     {
         BuildableArea area = lastClickedBuildable.GetComponent<BuildableArea>();
+        area.built = true;
         Instantiate(_Buildable, area.connectionTransform);
     }
 
     public void DestroyBuilding()
     {
+        lastClickedBuildable.GetComponentInParent<BuildableArea >().built = false;
         Destroy(lastClickedBuildable);
     }
 }
