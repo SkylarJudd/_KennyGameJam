@@ -436,6 +436,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7142822073089424091}
   - component: {fileID: 1701811004303332276}
+  - component: {fileID: 4375693877371830167}
   m_Layer: 0
   m_Name: Resource_Bar_Base
   m_TagString: Untagged
@@ -493,6 +494,18 @@ MonoBehaviour:
     UseLocal: 0
     LocalValue: 0
     Variable: {fileID: 0}
+--- !u!114 &4375693877371830167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6800503849026611023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8604757b72608a94c8b4406d24d61c4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7074895451100687313
 GameObject:
   m_ObjectHideFlags: 0

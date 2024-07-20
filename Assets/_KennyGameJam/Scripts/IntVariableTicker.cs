@@ -8,7 +8,7 @@ namespace KenneyJam.UI
     {
         [Header("Ticker Settings")]
         [SerializeField] private bool _isRunning = true; // To control whether the timer is running
-        [SerializeField] private TickerState tickerState;
+        public TickerState tickerState;
 
         [Header("VariableReferences")]
         [SerializeField] private FloatReference tickRate;
