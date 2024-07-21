@@ -24,6 +24,27 @@ namespace KenneyJam.UI
             _currentTime.Value = 0f;
         }
 
+        public void StopTicker()
+        {
+            switch (GameMannager.instance.gameState)
+            {
+                case GameState.GameOver:
+                    _isRunning = false;
+                    break;
+                case GameState.Menu:
+                    _isRunning = false;
+                    break;
+                case GameState.Paused:
+                    _isRunning = false;
+                    break;
+                case GameState.Playing:
+                    _isRunning = true;
+                    break;
+                default:
+                    break;
+            }
+        }
+
         // Update is called once per frame
         void Update()
         {
