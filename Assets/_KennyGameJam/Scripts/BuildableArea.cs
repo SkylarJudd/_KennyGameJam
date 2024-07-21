@@ -21,6 +21,10 @@ public class BuildableArea : MonoBehaviour
         {
             locked = true;
         }
+
+        if (connectedBuildables.Length == 0)
+            return;
+
         connectedRoadNormal.SetActive(true);
         connectedRoadHighlighted.SetActive(false);
     }
