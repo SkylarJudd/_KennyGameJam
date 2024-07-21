@@ -6,9 +6,29 @@ public class SpawnClickable : MonoBehaviour
     [SerializeField] GameObject[] clickables;
     public bool clickableSpawnned;
 
-    private void Start()
+    public void GameStateCheck()
     {
-        StartCoroutine(spawnClickable(Random.Range(5, 120)));
+        switch(GameMannager.instance.gameState)
+        {
+            case GameState.Playing:
+                StartCoroutine(spawnClickable(Random.Range(30, 120)));
+                break;
+            case GameState.GameOver:
+                StopAllCoroutines();
+                break;
+            case GameState.Paused:
+                StopAllCoroutines();
+                break;
+            case GameState.Menu:
+                StopAllCoroutines();
+                break;
+            case GameState.Win:
+                StopAllCoroutines();
+                break;
+            default:
+                break;
+        }
+        StopAllCoroutines();
     }
 
     IEnumerator spawnClickable(float _seconds)
