@@ -446,6 +446,8 @@ GameObject:
   - component: {fileID: 7142822073089424091}
   - component: {fileID: 1701811004303332276}
   - component: {fileID: 4375693877371830167}
+  - component: {fileID: 5997686915862166608}
+  - component: {fileID: 2935385670593482309}
   m_Layer: 0
   m_Name: Resource_Bar_Base
   m_TagString: Untagged
@@ -517,6 +519,54 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ticker: {fileID: 0}
   fillImage: {fileID: 0}
+--- !u!114 &5997686915862166608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6800503849026611023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d93ba61543949824db31c7cb89b4f009, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _binding: 0
+  _disableAfterSubscribing: 0
+  _eventResponses:
+  - Delay: 0
+    ScriptableEvent: {fileID: 11400000, guid: ecad810c551a2b848b68b5f66abd10e1, type: 2}
+    Response:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2935385670593482309}
+          m_TargetAssemblyTypeName: GameStateHideObject, Assembly-CSharp
+          m_MethodName: Process
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &2935385670593482309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6800503849026611023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58211090f26867340ad6f649aed3f59f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameStatesToHide: 0000000003000000
+  gameStatesToShow: 0100000002000000
+  gameObjectsToHide:
+  - {fileID: 7074895451100687313}
 --- !u!1 &7074895451100687313
 GameObject:
   m_ObjectHideFlags: 0
