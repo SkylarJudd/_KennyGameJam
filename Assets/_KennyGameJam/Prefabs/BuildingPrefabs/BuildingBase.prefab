@@ -41,6 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3934819403896592562}
   - component: {fileID: 3953679047800424087}
+  - component: {fileID: 6196735835313621700}
   m_Layer: 8
   m_Name: BuildingBase
   m_TagString: Untagged
@@ -58,7 +59,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.8994281, y: 2.4080608, z: -4.6841607}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6602989130739653657}
@@ -128,6 +129,23 @@ MonoBehaviour:
     UseLocal: 0
     LocalValue: 0
     Variable: {fileID: 11400000, guid: 2931b3132f67b9440bc1cb5a79f626b4, type: 2}
+--- !u!114 &6196735835313621700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1954192294613376647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2eecbba4329c1b47be8bab967ccc25e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _enabled: 1
+  scale: {x: 1, y: 1, z: 1}
+  duration: 1.2
+  _yoyo: 0
+  _easingType: 2
 --- !u!1 &3214861807211517193
 GameObject:
   m_ObjectHideFlags: 0
