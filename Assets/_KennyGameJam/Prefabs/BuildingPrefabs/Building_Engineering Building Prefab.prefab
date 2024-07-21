@@ -10,7 +10,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1954192294613376647, guid: 6ce744562b8fb8a48971b2b8cc376376, type: 3}
       propertyPath: m_Name
-      value: BuildingBase
+      value: Building_Engineering Building Prefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 3674255116717805053, guid: 6ce744562b8fb8a48971b2b8cc376376, type: 3}
+      propertyPath: m_Actions
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3934819403896592562, guid: 6ce744562b8fb8a48971b2b8cc376376, type: 3}
       propertyPath: m_LocalPosition.x

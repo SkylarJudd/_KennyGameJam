@@ -146,6 +146,7 @@ MonoBehaviour:
   duration: 1.2
   _yoyo: 0
   _easingType: 2
+  visuals: {fileID: 0}
 --- !u!1 &3214861807211517193
 GameObject:
   m_ObjectHideFlags: 0

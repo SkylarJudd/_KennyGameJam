@@ -8,6 +8,7 @@ public class SpawnClickable : MonoBehaviour
 
     public void GameStateCheck()
     {
+        print("StartPickUps");
         switch(GameMannager.instance.gameState)
         {
             case GameState.Playing:
@@ -26,9 +27,11 @@ public class SpawnClickable : MonoBehaviour
                 StopAllCoroutines();
                 break;
             default:
+
+                StopAllCoroutines();
                 break;
         }
-        StopAllCoroutines();
+
     }
 
     IEnumerator spawnClickable(float _seconds)

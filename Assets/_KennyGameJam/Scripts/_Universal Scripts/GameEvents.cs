@@ -16,6 +16,12 @@ public static class GameEvents
     public static event Action<GameObject, string> OnPlayerBrakeClickable = null;
     public static event Action<GameObject> OnGameWin = null;
 
+    public static event Action<GameObject> OnEnermyHit = null;
+    public static event Action<GameObject> OnEnermyDie = null;
+
+    public static event Action<GameObject> OnChickenEnemyHit = null;
+    public static event Action<GameObject> OnChickenEnemyDie = null;
+
 
     #region ("Exsample of adding action")
     public static void GameEventExsample(GameObject go)
@@ -55,5 +61,28 @@ public static class GameEvents
         OnGameWin?.Invoke(go);
     }
 
+    public static void ReportOnEnemyHit(GameObject go)
+    {
+        OnEnermyHit?.Invoke(go);
+    }
+
+    public static void ReportOnEnemyDie(GameObject go)
+    {
+        OnEnermyDie?.Invoke(go);
+    }
+
+    public static void ReportOnChickenEnemyHit(GameObject go)
+    {
+        Debug.Log("ChickenHitEvent Fired");
+        OnChickenEnemyHit?.Invoke(go);
+
+    }
+
+    public static void ReportOnChickenEnemyDie(GameObject go)
+    {
+        Debug.Log("ChickenDiedEvent Fired");
+        OnChickenEnemyDie?.Invoke(go);
+
+    }
 
 }
