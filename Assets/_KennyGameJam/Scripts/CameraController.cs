@@ -18,6 +18,18 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        switch(GameMannager.instance.gameState)
+        {
+            case GameState.GameOver:
+            case GameState.Menu:
+            case GameState.Paused:
+                return; // Dont Camera Control
+            case GameState.Playing:
+                break;
+            default:
+                break;
+        }
+
         // Handle panning with the middle mouse button
         if (Input.GetMouseButton(2))
         {
