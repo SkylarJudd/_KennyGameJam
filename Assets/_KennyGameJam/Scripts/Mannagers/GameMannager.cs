@@ -77,7 +77,7 @@ public class GameMannager : Singleton<GameMannager>
 
 
 
-        if (shipLevel == 2)
+        if (shipLevel == 3)
         {
             //player wins ship takes off
             gameState = GameState.Win;
