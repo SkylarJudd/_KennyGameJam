@@ -16,6 +16,11 @@ public class ScaleTween : MonoBehaviour
 
     private void Start()
     {
+        if(visuals == null)
+        {
+            visuals = gameObject;
+        }
+
         _cachedScale = visuals.transform.localScale;
     }
 
