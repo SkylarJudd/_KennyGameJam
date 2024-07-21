@@ -12,6 +12,7 @@ public class BuildableArea : MonoBehaviour
 
     public GameObject connectedRoadNormal;
     public GameObject connectedRoadHighlighted;
+    public BuildableArea OtherPathBuilsable;
 
     [SerializeField] bool isStarter;
 
@@ -73,6 +74,12 @@ public class BuildableArea : MonoBehaviour
 
         if (connectedBuildables.Length == 0)
             return;
+
+        if (OtherPathBuilsable != null)
+        {
+            if(OtherPathBuilsable.built == true)
+                return;
+        }
 
         connectedRoadNormal.SetActive(true);
         connectedRoadHighlighted.SetActive(false);
