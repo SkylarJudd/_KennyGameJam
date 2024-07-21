@@ -613,6 +613,47 @@ MonoBehaviour:
   costTextRefinery: {fileID: 3042437669591315140}
   costTextRefuel: {fileID: 459072843442188771}
   costTextMine: {fileID: 7444643521373956811}
+  cantBuyVisualDrill: {fileID: 21300000, guid: 1fad699ca21b562429a717b662b8d045, type: 3}
+  cantBuyVisualFueling: {fileID: 21300000, guid: 364f8178dfe55114991d688dff8953b1, type: 3}
+  cantBuyVisualRefinery: {fileID: 21300000, guid: 132b27fe4919cb14986dd6d19db58a92, type: 3}
+  canBuyVisualDrill: {fileID: 21300000, guid: dc52d2a0e7d88d84285ed63b86725b88, type: 3}
+  canBuyVisualFueling: {fileID: 21300000, guid: ce14f8d9abec0b643b921c082d9e233c, type: 3}
+  canBuyVisualRefinery: {fileID: 21300000, guid: c60590804384d864cbada0523655e893, type: 3}
+  BuyVisualDrill: {fileID: 3561184880492689116}
+  BuyVisualFueling: {fileID: 8235767903539068502}
+  BuyVisualRefinery: {fileID: 3700760106553067233}
+  currentBots:
+    UseLocal: 0
+    LocalValue: 0
+    Variable: {fileID: 11400000, guid: 9498ca06b58d7a64a82d913fe2715a9f, type: 2}
+  currentTitainium:
+    UseLocal: 0
+    LocalValue: 0
+    Variable: {fileID: 11400000, guid: 01f25cb932dc39a4ab66fe8cffdd5754, type: 2}
+  drillDroneCost:
+    UseLocal: 0
+    LocalValue: 0
+    Variable: {fileID: 11400000, guid: 74fde320e4230994895842f418a61ff4, type: 2}
+  drillitainiumCost:
+    UseLocal: 0
+    LocalValue: 0
+    Variable: {fileID: 11400000, guid: 9ea92e8123dd5534da99e8109e0e958f, type: 2}
+  fuelingDroneCost:
+    UseLocal: 1
+    LocalValue: 0
+    Variable: {fileID: 11400000, guid: 20c4a3ded3c9f7f469d42dd5279dbb8f, type: 2}
+  fuelingTitainiumCost:
+    UseLocal: 0
+    LocalValue: 0
+    Variable: {fileID: 11400000, guid: c161d541cf8fd3d419757478738ab261, type: 2}
+  refineryDroneCost:
+    UseLocal: 0
+    LocalValue: 0
+    Variable: {fileID: 11400000, guid: 2b6a3c8d11808dd4a95491ece466f2b3, type: 2}
+  refineryitainiumCost:
+    UseLocal: 0
+    LocalValue: 0
+    Variable: {fileID: 11400000, guid: 52ab6777dace365418195b4c7432c920, type: 2}
 --- !u!1 &6180018704365989493
 GameObject:
   m_ObjectHideFlags: 0
