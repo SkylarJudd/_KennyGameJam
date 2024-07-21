@@ -239,6 +239,82 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8254276857437259692, guid: 70d263a098a570e41aa91b675f74abfe, type: 3}
+      propertyPath: fuelAmountCurrent.Variable
+      value: 
+      objectReference: {fileID: 11400000, guid: ffbca27845237a64ba083d094a0c067f, type: 2}
+    - target: {fileID: 8254276857437259692, guid: 70d263a098a570e41aa91b675f74abfe, type: 3}
+      propertyPath: upgradeShipLevelUI.Variable
+      value: 
+      objectReference: {fileID: 11400000, guid: 9dc88013200fac345b4454762cd05d15, type: 2}
+    - target: {fileID: 8254276857437259692, guid: 70d263a098a570e41aa91b675f74abfe, type: 3}
+      propertyPath: neededFuelToLevel.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8254276857437259692, guid: 70d263a098a570e41aa91b675f74abfe, type: 3}
+      propertyPath: titaniumAmoutCurrent.Variable
+      value: 
+      objectReference: {fileID: 11400000, guid: 01f25cb932dc39a4ab66fe8cffdd5754, type: 2}
+    - target: {fileID: 8254276857437259692, guid: 70d263a098a570e41aa91b675f74abfe, type: 3}
+      propertyPath: neededTitaniumToLevel.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8254276857437259692, guid: 70d263a098a570e41aa91b675f74abfe, type: 3}
+      propertyPath: upgradefuelAmountCurrentUI.Variable
+      value: 
+      objectReference: {fileID: 11400000, guid: 7adf84fafe5337b46b2a9360d60aced4, type: 2}
+    - target: {fileID: 8254276857437259692, guid: 70d263a098a570e41aa91b675f74abfe, type: 3}
+      propertyPath: upgradetitaniumAmoutCurrentUI.Variable
+      value: 
+      objectReference: {fileID: 11400000, guid: 5ecc9edf81377d74ab640e68a8f037b8, type: 2}
+    - target: {fileID: 8254276857437259692, guid: 70d263a098a570e41aa91b675f74abfe, type: 3}
+      propertyPath: neededFuelToLevel.Array.data[0].Variable
+      value: 
+      objectReference: {fileID: 11400000, guid: 27bd8548f0d59b443b6c56aa1ae6ce77, type: 2}
+    - target: {fileID: 8254276857437259692, guid: 70d263a098a570e41aa91b675f74abfe, type: 3}
+      propertyPath: neededFuelToLevel.Array.data[1].Variable
+      value: 
+      objectReference: {fileID: 11400000, guid: 671c73878a8fbb447ba131d9cb118d3b, type: 2}
+    - target: {fileID: 8254276857437259692, guid: 70d263a098a570e41aa91b675f74abfe, type: 3}
+      propertyPath: neededFuelToLevel.Array.data[2].Variable
+      value: 
+      objectReference: {fileID: 11400000, guid: 1348a7f112996854b8c9b5fc30f7ffc6, type: 2}
+    - target: {fileID: 8254276857437259692, guid: 70d263a098a570e41aa91b675f74abfe, type: 3}
+      propertyPath: neededFuelToLevel.Array.data[0].LocalValue
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 8254276857437259692, guid: 70d263a098a570e41aa91b675f74abfe, type: 3}
+      propertyPath: neededFuelToLevel.Array.data[1].LocalValue
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 8254276857437259692, guid: 70d263a098a570e41aa91b675f74abfe, type: 3}
+      propertyPath: neededFuelToLevel.Array.data[2].LocalValue
+      value: 2000
+      objectReference: {fileID: 0}
+    - target: {fileID: 8254276857437259692, guid: 70d263a098a570e41aa91b675f74abfe, type: 3}
+      propertyPath: neededTitaniumToLevel.Array.data[0].Variable
+      value: 
+      objectReference: {fileID: 11400000, guid: 6acbdc6f4ebf31d4185e9e0d8d5c0200, type: 2}
+    - target: {fileID: 8254276857437259692, guid: 70d263a098a570e41aa91b675f74abfe, type: 3}
+      propertyPath: neededTitaniumToLevel.Array.data[1].Variable
+      value: 
+      objectReference: {fileID: 11400000, guid: 4c4aaac93a4476643b233f095244a15e, type: 2}
+    - target: {fileID: 8254276857437259692, guid: 70d263a098a570e41aa91b675f74abfe, type: 3}
+      propertyPath: neededTitaniumToLevel.Array.data[2].Variable
+      value: 
+      objectReference: {fileID: 11400000, guid: ea7996f471d726849a7ef5632d1d2da9, type: 2}
+    - target: {fileID: 8254276857437259692, guid: 70d263a098a570e41aa91b675f74abfe, type: 3}
+      propertyPath: neededTitaniumToLevel.Array.data[0].LocalValue
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 8254276857437259692, guid: 70d263a098a570e41aa91b675f74abfe, type: 3}
+      propertyPath: neededTitaniumToLevel.Array.data[1].LocalValue
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 8254276857437259692, guid: 70d263a098a570e41aa91b675f74abfe, type: 3}
+      propertyPath: neededTitaniumToLevel.Array.data[2].LocalValue
+      value: 1000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
