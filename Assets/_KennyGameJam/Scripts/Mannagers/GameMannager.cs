@@ -92,7 +92,12 @@ public class GameMannager : Singleton<GameMannager>
             fuelAmountCurrent.Value -= neededFuelToLevel[shipLevel];
             titaniumAmoutCurrent.Value -= neededTitaniumToLevel[shipLevel];
             voidUpdateShipLevel();
-            UpdateUIBuyValues();
+
+            if (gameState  != GameState.Win)
+            {
+                UpdateUIBuyValues();
+            }
+           
 
         }
     }

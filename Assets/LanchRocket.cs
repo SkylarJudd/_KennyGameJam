@@ -20,10 +20,12 @@ public class LanchRocket : MonoBehaviour
     private void OnEnable()
     {
         GameEvents.OnGameWin += GameEvents_OnGameWin;
+        
     }
 
     private void GameEvents_OnGameWin(GameObject obj)
     {
+        print("WinEventCalled");
         StartCoroutine(LanchRocketLoop());
     }
 
