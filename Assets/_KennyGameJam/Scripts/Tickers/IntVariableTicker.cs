@@ -94,7 +94,7 @@ namespace KenneyJam.UI
 
             if (current.Value <= 0)
             {
-                GameMannager.instance.gameState = GameState.GameOver;
+                GameMannager.instance.SetGameState(GameState.GameOver);
                 _isRunning = false;
             }
         }
