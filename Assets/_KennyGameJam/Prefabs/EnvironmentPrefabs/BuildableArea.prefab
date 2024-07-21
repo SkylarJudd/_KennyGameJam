@@ -47,9 +47,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0da33eb94462fc4ab683ec380dba189, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  connectionTransform: {fileID: 3660879132506247621}
+  connectTransform: {fileID: 3660879132506247621}
+  connectedBuildables: []
   built: 0
   visibileNode: {fileID: 6867355735407282859}
+  ConnectedRoadNormal: {fileID: 0}
+  ConnectedRoadHighlighted: {fileID: 0}
 --- !u!65 &5285175058656543178
 BoxCollider:
   m_ObjectHideFlags: 0

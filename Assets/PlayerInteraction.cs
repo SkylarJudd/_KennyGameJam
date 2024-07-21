@@ -46,7 +46,7 @@ public class PlayerInteraction : Singleton<PlayerInteraction>
                     lastClickedBuildable = raycastHit3.transform.gameObject;
                     BuildableArea buildableArea = raycastHit3.transform.gameObject.GetComponent<BuildableArea>();
 
-                    if (buildableArea.built != true)
+                    if (buildableArea.built != true && buildableArea.locked != true)
                     {
                         mouseWorldPosition = raycastHit3.point;
                         GameEvents.PlayerClickBuildable(lastClickedBuildable);
@@ -86,7 +86,7 @@ public class PlayerInteraction : Singleton<PlayerInteraction>
                     BuildableArea buildableArea = raycastHit3.transform.gameObject.GetComponent<BuildableArea>();
                     GameObject lastSelectedBuildableArea = raycastHit3.transform.gameObject;
 
-                    if (buildableArea.built != true)
+                    if (buildableArea.built != true && buildableArea.locked != true)
                     {
                         mouseWorldPosition = raycastHit3.point;
                         GameEvents.PlayerMouseOverBuildable(lastSelectedBuildableArea);
@@ -139,8 +139,8 @@ public class PlayerInteraction : Singleton<PlayerInteraction>
         {
             if ((buildable.currentTitanium - buildable.titaniumCost) >= 0 && (buildable.currentDrones - buildable.DroneCost) >= 0)
             {
-                GameObject spawnedBuilding = Instantiate(_Buildable, area.connectionTransform);
-                area.built = true;
+                GameObject spawnedBuilding = Instantiate(_Buildable, area.connectTransform);
+                area.SetBuiltToTrue();
 
             }
             else
@@ -166,13 +166,13 @@ public class PlayerInteraction : Singleton<PlayerInteraction>
             }
             else
             {
-                buildableArea.built = false;
+                buildableArea.SetBuiltToFalse();
                 Destroy(lastClickedBuildable);
             }
         }
         else
         {
-            buildableArea.built = false;
+            buildableArea.SetBuiltToFalse();
             Destroy(lastClickedBuildable);
         }
     }
