@@ -1,5 +1,6 @@
 using DG.Tweening;
 using Obvious.Soap;
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -11,6 +12,7 @@ public class ClickableUpGrade : MonoBehaviour
     [SerializeField] int currentHealth;
 
     [SerializeField] GameObject clickableVisuals;
+    [SerializeField] GameObject SelectedVisuals;
 
     [SerializeField] private IntReference currentBots;
     [SerializeField] private IntReference currentFuel;
@@ -28,7 +30,7 @@ public class ClickableUpGrade : MonoBehaviour
     [SerializeField] private IntReference refinaryPlus;
     [SerializeField] private IntReference drillPlus;
 
-    
+
     [SerializeField] private Vector3 scale;
     [SerializeField] private float duration;
 
@@ -38,6 +40,7 @@ public class ClickableUpGrade : MonoBehaviour
     [SerializeField] private string message;
 
     public SpawnClickable owner;
+    Coroutine selectedResetCorutine;
 
 
 
@@ -88,6 +91,27 @@ public class ClickableUpGrade : MonoBehaviour
         currentRefinaryProduction.Value += refinaryPlus;
         currentDrill.Value += drillPlus;
     }
-   
+
+    public void OnMouseOClickable()
+    {
+        SelectedVisuals.SetActive(true);
+
+        if(selectedResetCorutine != null)
+        {
+            StopCoroutine(selectedResetCorutine);
+        }
+        selectedResetCorutine =  StartCoroutine(turnOffSelected());
+    }
+
+    IEnumerator turnOffSelected()
+    {
+        yield return new WaitForSeconds(0.1f);
+        OnMouseExitClickable();
+    }
+
+    public void OnMouseExitClickable()
+    {
+        SelectedVisuals.SetActive(false);
+    }
 
 }

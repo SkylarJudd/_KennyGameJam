@@ -113,7 +113,9 @@ public class PlayerInteraction : Singleton<PlayerInteraction>
                 case "Building":
                     return;
 
-               
+                case "ClickableUpgrade":
+                     raycastHit3.transform.gameObject.GetComponent<ClickableUpGrade>().OnMouseOClickable();
+                    return;
                 default:
                     return;
             }

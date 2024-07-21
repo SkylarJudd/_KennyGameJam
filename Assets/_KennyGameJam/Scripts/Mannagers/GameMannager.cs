@@ -81,6 +81,7 @@ public class GameMannager : Singleton<GameMannager>
         {
             //player wins ship takes off
             gameState = GameState.Win;
+            GameEvents.WinGame(gameObject);
         }
     }
 
