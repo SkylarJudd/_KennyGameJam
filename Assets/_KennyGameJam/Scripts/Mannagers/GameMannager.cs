@@ -8,6 +8,7 @@ public enum GameState
     Playing,
     Paused,
     GameOver,
+    Win,
 }
 
 public enum Difficulty
@@ -24,6 +25,18 @@ public class GameMannager : Singleton<GameMannager>
 
     public ScriptableEventNoParam OnGameStateChanged;
 
+    public int shipLevel;
+
+    [SerializeField] private IntReference fuelAmountCurrent;
+    [SerializeField] private IntReference titaniumAmoutCurrent;
+
+    [SerializeField] private IntReference[] neededFuelToLevel;
+    [SerializeField] private IntReference[] neededTitaniumToLevel;
+
+    [SerializeField] private IntReference upgradefuelAmountCurrentUI;
+    [SerializeField] private IntReference upgradetitaniumAmoutCurrentUI;
+    [SerializeField] private IntReference upgradeShipLevelUI;
+
     #region("Event Exsample")
     private void GameEvents_GameEventExsampleDo(GameObject _go)
     {
@@ -34,6 +47,7 @@ public class GameMannager : Singleton<GameMannager>
     private void Start()
     {
         SetGameState(GameState.Menu);
+        UpdateUIBuyValues();
     }
 
     private void OnEnable()
@@ -55,5 +69,37 @@ public class GameMannager : Singleton<GameMannager>
     {
         gameState = _gameState;
         OnGameStateChanged.Raise(); //Raise Event
+    }
+
+    public void voidUpdateShipLevel()
+    {
+        shipLevel++;
+
+
+
+        if (shipLevel == 2)
+        {
+            //player wins ship takes off
+            gameState = GameState.Win;
+        }
+    }
+
+    public void CheckIfCanUpgrade()
+    {
+        if (fuelAmountCurrent >= neededFuelToLevel[shipLevel] && titaniumAmoutCurrent >= neededTitaniumToLevel[shipLevel])
+        {
+            fuelAmountCurrent.Value -= neededFuelToLevel[shipLevel];
+            titaniumAmoutCurrent.Value -= neededTitaniumToLevel[shipLevel];
+            voidUpdateShipLevel();
+            UpdateUIBuyValues();
+
+        }
+    }
+
+    void UpdateUIBuyValues()
+    {
+        upgradefuelAmountCurrentUI.Value = neededFuelToLevel[shipLevel];
+        upgradetitaniumAmoutCurrentUI.Value = neededTitaniumToLevel[shipLevel];
+        upgradeShipLevelUI.Value = shipLevel + 1;
     }
 }

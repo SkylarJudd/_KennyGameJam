@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -19,11 +20,15 @@ public class PlayerInteraction : Singleton<PlayerInteraction>
     [SerializeField] private GameObject refuelingStationPrefab;
     [SerializeField] private GameObject titaniumMinerefab;
 
+    float clickCooldownTimer;
+
     Vector3 mouseWorldPosition = Vector3.zero;
 
     public void Update()
     {
         OnHover();
+
+        if (clickCooldownTimer < 0) clickCooldownTimer = 0; else clickCooldownTimer -= Time.deltaTime;
     }
 
     public void OnClick(InputAction.CallbackContext _context)
@@ -60,6 +65,17 @@ public class PlayerInteraction : Singleton<PlayerInteraction>
                     mouseWorldPosition = raycastHit3.point;
                     GameEvents.PlayerClickBuildableBuilt(lastClickedBuildable.GetComponent<BuildableObject>().UiTransform.gameObject);
                     return;
+
+                case "ClickableUpgrade":
+                    if(clickCooldownTimer <= 0)
+                    {
+                        clickCooldownTimer = 0.2f;
+                        ClickableUpGrade clickable = raycastHit3.transform.gameObject.GetComponent<ClickableUpGrade>();
+                        clickable.OnClickClickableUpgrade();
+                    }
+                    
+                    return;
+
                 default:
                     return;
             }
@@ -93,7 +109,11 @@ public class PlayerInteraction : Singleton<PlayerInteraction>
                         return;
                     }
                     return;
+
                 case "Building":
+                    return;
+
+               
                 default:
                     return;
             }

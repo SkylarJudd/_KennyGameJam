@@ -542,6 +542,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scaleMultiplier: 0.001
   heightMultiplier: 0.2
+  updateHight: 1
 --- !u!65 &1240232351645986253
 BoxCollider:
   m_ObjectHideFlags: 0

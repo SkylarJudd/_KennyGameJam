@@ -9,13 +9,14 @@ public class ScaleTween : MonoBehaviour
 
     [SerializeField] private bool _yoyo;
     [SerializeField] private Ease _easingType;
+    [SerializeField] GameObject visuals;
 
     private bool _isRunning;
     private Vector3 _cachedScale;
 
     private void Start()
     {
-        _cachedScale = transform.localScale;
+        _cachedScale = visuals.transform.localScale;
     }
 
     // Update is called once per frame
@@ -24,8 +25,8 @@ public class ScaleTween : MonoBehaviour
         if(!_enabled)
         {
             _isRunning = false;
-            transform.localScale = _cachedScale;
-            TweenX.StopTween(transform);
+            visuals.transform.localScale = _cachedScale;
+            TweenX.StopTween(visuals.transform);
             return;
         }
         else
@@ -41,7 +42,7 @@ public class ScaleTween : MonoBehaviour
             return;
         }
 
-        TweenX.TweenScale(transform, scale, duration, _yoyo, _easingType);
+        TweenX.TweenScale(visuals.transform, scale, duration, _yoyo, _easingType);
 
         _isRunning = true;
     }

@@ -6,18 +6,15 @@ public class FaceCamera : MonoBehaviour
     Transform localTransform;
     [SerializeField] float scaleMultiplier = 1.0f;
     [SerializeField] float heightMultiplier = 1.0f;
+    [SerializeField] bool updateHight;
 
-    private Vector3 initialPosition;
     void Start()
     {
         mainCamera = FindAnyObjectByType<Camera>().transform;
         localTransform = GetComponent<Transform>();
     }
 
-    private void OnEnable()
-    {
-        initialPosition = transform.position;
-    }
+   
 
 
     void Update()
@@ -32,9 +29,14 @@ public class FaceCamera : MonoBehaviour
 
             transform.localScale = new Vector3(scale, scale, scale);
 
-            float height = distance * heightMultiplier;
+            if (updateHight)
+            {
+                float height = distance * heightMultiplier;
 
-            transform.position = new Vector3(transform.position.x, height, transform.position.z);
+                transform.position = new Vector3(transform.position.x, height, transform.position.z);
+            }
+
+            
         }
     }
 }
