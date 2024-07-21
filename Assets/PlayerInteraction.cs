@@ -154,7 +154,26 @@ public class PlayerInteraction : Singleton<PlayerInteraction>
 
     public void DestroyBuilding()
     {
-        lastClickedBuildable.GetComponentInParent<BuildableArea >().built = false;
-        Destroy(lastClickedBuildable);
+        BuildableArea buildableArea = lastClickedBuildable.GetComponentInParent<BuildableArea>();
+        BuildableObject buildableObject = lastClickedBuildable.GetComponent<BuildableObject>();
+
+        if (buildableObject.buildingType == BuildingType.FuelingStation)
+        {
+            if(buildableObject.currentDrones < buildableObject.DroneProduction)
+            {
+                Debug.Log("Not Enough Drones To Destroy This Building!");
+                return;
+            }
+            else
+            {
+                buildableArea.built = false;
+                Destroy(lastClickedBuildable);
+            }
+        }
+        else
+        {
+            buildableArea.built = false;
+            Destroy(lastClickedBuildable);
+        }
     }
 }

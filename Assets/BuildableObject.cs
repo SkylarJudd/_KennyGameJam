@@ -10,7 +10,7 @@ public enum BuildingType
 
 public class BuildableObject : MonoBehaviour
 {
-    [SerializeField] private BuildingType buildingType;
+    public BuildingType buildingType;
     public Transform UiTransform;
 
     [Header("Building Cost")]
@@ -21,7 +21,7 @@ public class BuildableObject : MonoBehaviour
     [Header("Building Production")]
     [SerializeField] private IntReference titaniumProduction;
     [SerializeField] private IntReference fuelProduction;
-    [SerializeField] private IntReference DroneProduction;
+    public IntReference DroneProduction;
 
     [Header("VariableReferences")]
     public IntReference currentTitanium;
@@ -47,16 +47,36 @@ public class BuildableObject : MonoBehaviour
 
     void HandleCosts(bool _destruction)
     {
-        currentTitanium.Value -= _destruction == true ? -titaniumCost.Value :  titaniumCost.Value;
-        currentDrones.Value -= _destruction == true ? -DroneCost.Value : DroneCost.Value;
-        fuelDecreaseRate.Value += _destruction == true ? -fuelCost.Value : fuelCost.Value;
+        switch(buildingType)
+        {
+            case BuildingType.Refinery:
+            case BuildingType.Drill:
+                currentTitanium.Value -= _destruction == true ? -titaniumCost.Value : titaniumCost.Value;
+                currentDrones.Value -= _destruction == true ? -DroneCost.Value : DroneCost.Value;
+                fuelDecreaseRate.Value += _destruction == true ? -fuelCost.Value : fuelCost.Value;
+                break;
+            case BuildingType.FuelingStation:
+                currentTitanium.Value -= _destruction == true ? -titaniumCost.Value : titaniumCost.Value;
+                fuelDecreaseRate.Value += _destruction == true ? -fuelCost.Value : fuelCost.Value;
+                break;
+            default:
+                break;
+        } 
     }
 
     void HandleProduction(bool _destruction)
     {
-        fuelIncreaseRate.Value += _destruction == true ? -fuelProduction.Value : fuelProduction.Value;
-        titaniumIncreaseRate.Value += _destruction == true ? -titaniumProduction.Value : titaniumProduction.Value;
-        currentDrones.Value += _destruction == true ? -DroneProduction.Value : DroneProduction.Value;
-
+        switch (buildingType)
+        {
+            case BuildingType.Refinery:
+            case BuildingType.Drill:
+            case BuildingType.FuelingStation:
+                fuelIncreaseRate.Value += _destruction == true ? -fuelProduction.Value : fuelProduction.Value;
+                titaniumIncreaseRate.Value += _destruction == true ? -titaniumProduction.Value : titaniumProduction.Value;
+                currentDrones.Value += _destruction == true ? -DroneProduction.Value : DroneProduction.Value;
+                break;
+            default:
+                break;
+        }
     }
 }
