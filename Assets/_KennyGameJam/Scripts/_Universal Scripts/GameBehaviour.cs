@@ -10,7 +10,7 @@ public class GameBehaviour : MonoBehaviour
     protected static UIMannager _UIM { get { return UIMannager.instance; } }
     protected static SceneController _SC { get { return SceneController.instance; } }
 
-    protected static ChickenEnermyMannager _CEM { get { return ChickenEnermyMannager.instance; } }
+    protected static RobotMannager _CEM { get { return RobotMannager.instance; } }
     protected static ChickenEnermyNavMannager _CNM { get { return ChickenEnermyNavMannager.instance; } }
 
     public ValidNavPoints FindClosestNavPoint(Transform _currentLocation, List<ValidNavPoints> _objects)

@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static ChickenEnermyMannager;
+using static RobotMannager;
 
 public class ChickenEnermyNavMannager : Singleton<ChickenEnermyNavMannager>
 {

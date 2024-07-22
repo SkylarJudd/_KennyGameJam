@@ -4,12 +4,17 @@ using System.Collections.Generic;
 using System;
 using UnityEngine.InputSystem;
 
+public class SpawnPointGroup
+{
+    public List<Transform> robotSpawnPoints;
+}
+
 public enum ChickenEnemyType { Base,Flying,Boomer}
 public enum ChickenNavType { Linear,Random, Loop }
-public class ChickenEnermyMannager : Singleton<ChickenEnermyMannager>
+public class RobotMannager : Singleton<RobotMannager>
 {
-    public GameObject[] chickenEnemyPrefab;
-    public Transform[] chickenSpawnPoints;
+    public GameObject[] robotPrefabs;
+    public List<SpawnPointGroup> robotSpawnPoints;
 
     public List<spawnnedChickenEnemiesData> spawnnedChickenEnemies;
 
@@ -89,18 +94,18 @@ public class ChickenEnermyMannager : Singleton<ChickenEnermyMannager>
 
         for (int i = 0; i < spawnAmount; i++)
         {
-            if (i >= chickenSpawnPoints.Length)
+            if (i >= robotSpawnPoints.Count)
             {
                 Debug.LogError("Not enough spawn points defined.");
                 yield break;
             }
-            if (chickenSpawnPoints[i] == null)
+            if (robotSpawnPoints[i] == null)
             {
                 Debug.LogError("Spawn point is null at index: " + i);
                 yield break;
             }
 
-            SpawnChickenEnemy(chickenSpawnPoints[i], chickenSpawnPoints[i], i);
+            SpawnChickenEnemy(robotSpawnPoints[0].robotSpawnPoints[i], robotSpawnPoints[0].robotSpawnPoints[i], i);
             yield return new WaitForSeconds(seconds);
         }
         StopCoroutine("SpawnChickenEnemies");
@@ -111,7 +116,7 @@ public class ChickenEnermyMannager : Singleton<ChickenEnermyMannager>
         //print($"SpawnChickenEnemy Called Spawn pos = {_spawnPos.transform.position} spawn rot = {_spawnRot.transform.rotation} and index = {_spawnPointIndex}");
 
 
-        GameObject enemyPrefab = chickenEnemyPrefab[UnityEngine.Random.Range(0, chickenEnemyPrefab.Length)];
+        GameObject enemyPrefab = robotPrefabs[UnityEngine.Random.Range(0, robotPrefabs.Length)];
 
         GameObject enemySpawn = Instantiate(enemyPrefab, _spawnPos.position, _spawnRot.rotation);
 
@@ -174,10 +179,10 @@ public class ChickenEnermyMannager : Singleton<ChickenEnermyMannager>
     private int GetEnemyCount() => spawnnedChickenEnemies.Count;
 
 
-    public Transform GetRandomSpawnPos() => chickenSpawnPoints[UnityEngine.Random.Range(0, chickenSpawnPoints.Length)];
+    public Transform GetRandomSpawnPos() => robotSpawnPoints[0].robotSpawnPoints[UnityEngine.Random.Range(0, robotSpawnPoints.Count)];
 
 
-    public GameObject GetRandomChickenEnermy() => chickenEnemyPrefab[UnityEngine.Random.Range(0, chickenEnemyPrefab.Length)];
+    public GameObject GetRandomChickenEnermy() => robotPrefabs[UnityEngine.Random.Range(0, robotPrefabs.Length)];
 
 
     private void GameEvents_OnChickenEnermyDie(GameObject _deadChickenGO)

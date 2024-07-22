@@ -12,6 +12,7 @@ public class PlayerInteraction : Singleton<PlayerInteraction>
     [SerializeField] private LayerMask buildableBiltLayerMask;
 
     [SerializeField] private GameObject lastClickedBuildable;
+    [SerializeField] private GameObject lastHoverdBuildable;
 
 
 
@@ -98,7 +99,6 @@ public class PlayerInteraction : Singleton<PlayerInteraction>
             switch (LayerMask.LayerToName(layerMask))
             {
                 case "Buildable":
-                    lastClickedBuildable = raycastHit3.transform.gameObject;
                     BuildableArea buildableArea = raycastHit3.transform.gameObject.GetComponent<BuildableArea>();
                     GameObject lastSelectedBuildableArea = raycastHit3.transform.gameObject;
 
